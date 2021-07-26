@@ -1,0 +1,23 @@
+.MuiDrawer-paper {
+  width: 60%;
+}
+.MuiAppBar-positionStatic {
+  height: 100%;
+}
+
+@media (max-width: 792px) {
+  .MuiGrid-container {
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .MuiGrid-item {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .MuiDrawer-paper {
+    width: 80%;
+  }
+}

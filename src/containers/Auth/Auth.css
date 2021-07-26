@@ -1,0 +1,15 @@
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:focus-within,
+input:-webkit-autofill:focus-visible,
+input:-webkit-autofill:active {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 50px #111924 inset;
+  -webkit-text-fill-color: #c2c4cc;
+}
+.MuiFormLabel-root {
+  color: #283342 !important;
+}
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: #324054 !important;
+}
