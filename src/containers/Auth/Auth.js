@@ -80,15 +80,12 @@ const Auth = () => {
         response.data.localId
           )
       history.replace('/notes');
-      console.log(response, 'expires');
      }
     }).catch(err => {
       console.log(err.response.data.error.message);
       authCtx.errorHandler(err.response.data.error.message)
     })
     setSubmitting(false);
-    console.log('clicked')
-    console.log(authData, 'authData');
   }
   
   const switchAuthModeHandler = () => {
