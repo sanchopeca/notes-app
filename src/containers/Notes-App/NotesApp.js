@@ -7,9 +7,7 @@ import Main from '../../components/Notes/Main/Main';
 import AuthContext from '../../store/AuthContext';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import axios from 'axios';
-import { Typography } from '@material-ui/core';
 
 
 
@@ -61,11 +59,10 @@ const NotesApp = () => {
         }, {})
 
         const transformedFetchedData = Object.values(fetchedData).sort((a, b) => {
-          console.log(b.lastModified)
+
           
           const aEpoch = (new Date(a.lastModified)).getTime();
           const bEpoch = (new Date(b.lastModified)).getTime();
-          console.log(aEpoch, bEpoch, ' - sort');
 
           return aEpoch - bEpoch;
         })
@@ -73,21 +70,12 @@ const NotesApp = () => {
         const dataReversed = Object.values(transformedFetchedData).reverse()
 
         setNotes(dataReversed);
-        
-     
-        console.log(res.data, 'res-data');
-        console.log(fetchedNotes, 'fetchedNotes')
-        console.log(transformedNotes, '9');
-        console.log(transformedFetchedData, '29');
-        console.log(dataReversed, '329');
+
       }else{
         setNotes(null);
-        console.log(res.data, 'res-data');
-        console.log(notes, '29');
-        console.log(editNote, 'deletedEditNote')
       }
     })
-   }, [])
+   }, [token, userId])
 
   useEffect(() => {
       fetchNotes();
@@ -126,9 +114,7 @@ const NotesApp = () => {
       }
       setEditNote(editingNote);
       setActive(!active);
-      console.log(editNote, 'res2')
     }).catch(err => console.log(err))
-    console.log(note, 'eee');
   }
 
   const updateNoteHandler = (note) => {

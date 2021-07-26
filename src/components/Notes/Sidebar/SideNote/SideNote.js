@@ -8,7 +8,6 @@ const SideNote = ({note, onDeleteNote, onEditNote}) => {
 
   const isMobile = useMediaQuery(`(max-width: 790px)`);
 
-  const isExtraSmall = useMediaQuery(`(max-width: 480px`);
 
   return(
     <Box mb="1px" >

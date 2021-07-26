@@ -28,7 +28,6 @@ const Sidebar = ({user , notes, onDeleteNote, onEditNote}) => {
 
     noteList.sort((a, b) => new Date(a.props.dateModified) - new Date(b.props.dateModified))
 
-    console.log(noteList,'C')
   }
 
   return (
