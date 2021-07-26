@@ -55,12 +55,9 @@ const Profile = () => {
 
     axios.post('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAG5GhhL2aV9qB9CRoDZn3HSQMCV06EmlQ', changedData)
     .then(response => {
-      console.log(response, 'results')
       Authctx.login(response.data.idToken, response.data.displayName)
     })
     .catch(err => console.log(err));
-    
-    console.log(data, 'Profile Data');
     setSubmitting(false);
   }
 
